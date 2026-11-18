@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#09090c">
+<title>CART3R Browser</title>
+<style>
+:root{color-scheme:dark;--bg:#08080b;--panel:#111116;--panel2:#19171e;--line:#38232c;--red:#ff3048;--muted:#aaa2ad;--text:#f7f3f6}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% -20%,#35101b 0,transparent 48%),var(--bg);color:var(--text);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1080px;margin:auto;padding:20px 16px 44px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:30px}.brand{display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.08em}.logo{width:42px;height:42px;display:grid;place-items:center;border:1px solid #9b2a40;border-radius:13px;background:#180b10;color:var(--red);font-size:21px;box-shadow:0 0 25px #ff304822}.tag{font-size:10px;letter-spacing:.14em;color:#ff8190;border:1px solid #642232;border-radius:99px;padding:5px 10px}.hero{text-align:center;margin:38px auto 26px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.2em;color:#ff7182}.hero h1{font-size:clamp(38px,7vw,62px);line-height:1.05;letter-spacing:-.05em;margin:10px 0}.hero h1 span{color:var(--red);text-shadow:0 0 30px #ff304855}.hero p{color:var(--muted);margin:0}.browser{padding:15px;background:linear-gradient(145deg,#171319,#101015);border:1px solid #52202d;border-radius:20px;box-shadow:0 18px 70px #0009}
+.tabs{display:flex;align-items:center;gap:7px;overflow-x:auto;padding-bottom:12px}.tab{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:#0c0c11;color:#c8c0c9;border-radius:10px;padding:7px 10px;white-space:nowrap}.tab.active{border-color:#a52b42;background:#2a1119;color:white}.tab .close{border:0;background:transparent;color:#a99da6;padding:0 2px;font-size:17px;line-height:1}.newtab,.toolbtn{border:1px solid var(--line);background:#17141a;color:#f0e7ed;border-radius:10px}.newtab{width:36px;height:36px;color:#ff8190;font-size:20px;flex:none}.toolbar{display:flex;gap:8px;align-items:center}.toolbtn{width:40px;height:42px;flex:none}.address{display:flex;flex:1;min-width:0;overflow:hidden;border:1px solid #49303a;border-radius:12px;background:#09090e}.address input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:white;padding:12px}.address input::placeholder{color:#77717c}.go{border:0;background:var(--red);color:white;font-weight:850;padding:0 17px}.settings{display:flex;justify-content:flex-end;gap:8px;align-items:center;margin-top:10px;color:var(--muted);font-size:12px}.settings select{background:#17141a;color:#eee;border:1px solid var(--line);border-radius:8px;padding:6px}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:17px}.quick button{border:1px solid var(--line);background:#17141a;color:#eee;border-radius:12px;padding:12px 8px}.quick span{display:block;color:#ff7c8c;font-size:20px}.content{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:17px}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px;min-width:0}.cardhead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}.card h2{font-size:13px;letter-spacing:.1em;color:#ff8795;margin:0}.smallbtn{border:1px solid var(--line);background:#1b171e;color:#cfc4cc;border-radius:8px;padding:5px 8px;font-size:11px}.bookmarks,.history{display:flex;flex-wrap:wrap;gap:8px}.bookmark{display:flex;align-items:center;gap:7px;background:#1b171e;border:1px solid #38242d;border-radius:10px;padding:7px 9px;max-width:100%}.bookmark a{color:#f0e8ed;text-decoration:none;overflow-wrap:anywhere;font-size:13px}.bookmark button{border:0;background:none;color:#ff8290;padding:0 2px}.history{display:grid;gap:8px}.historyrow{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:#ded6dd}.historyrow span{overflow-wrap:anywhere}.historyrow small{color:var(--muted);white-space:nowrap}.hint{font-size:13px;color:var(--muted);margin:0}.notice{margin-top:15px;padding:11px 13px;border:1px solid #4d202d;border-radius:11px;background:#171016;color:#c9bfc7;font-size:12px}.footer{text-align:center;color:#746c77;font-size:11px;margin-top:20px}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#241018;border:1px solid #923047;color:white;padding:10px 15px;border-radius:12px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
+@media(max-width:650px){.shell{padding:15px 11px 35px}.hero{margin:30px auto 21px}.toolbar{gap:5px}.toolbtn{width:34px}.go{padding:0 12px}.quick{grid-template-columns:repeat(2,1fr)}.content{grid-template-columns:1fr}.tag{display:none}.settings{justify-content:space-between}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><div class="brand"><div class="logo">C</div><div>CART3R <span style="color:var(--red)">BROWSER</span></div></div><div class="tag">WEB WORKSPACE · 1.1</div></header>
+<section class="hero"><div class="eyebrow">YOUR WEB WORKSPACE</div><h1>Explore the <span>web.</span></h1><p>A customizable start page that works inside Safari or Chrome.</p></section>
+<main class="browser">
+  <div class="tabs" id="tabs"><button class="newtab" id="addTab" aria-label="New tab">+</button></div>
+  <div class="toolbar">
+    <button class="toolbtn" id="back" title="Browser back">←</button>
+    <button class="toolbtn" id="forward" title="Browser forward">→</button>
+    <button class="toolbtn" id="refresh" title="Refresh this page">↻</button>
+    <form class="address" id="searchForm"><input id="query" autocomplete="off" placeholder="Search the web or enter a website…" aria-label="Search or enter a website"><button class="go" type="submit">GO</button></form>
+    <button class="toolbtn" id="bookmarkCurrent" title="Save bookmark">☆</button>
+  </div>
+  <div class="settings"><label for="engine">Search engine</label><select id="engine"><option value="duck">DuckDuckGo</option><option value="bing">Bing</option><option value="google">Google</option></select></div>
+  <div class="quick">
+    <button data-search="weather"><span>☁</span>Weather</button><button data-search="Wikipedia"><span>W</span>Wikipedia</button><button data-search="YouTube"><span>▶</span>YouTube</button><button data-search="news"><span>▤</span>News</button>
+  </div>
+  <div class="content">
+    <section class="card"><div class="cardhead"><h2>BOOKMARKS</h2><button class="smallbtn" id="clearBookmarks">Clear all</button></div><div class="bookmarks" id="bookmarks"></div><div class="notice">Searches and website visits open in a new browser tab. Your school or network's normal web filters still apply.</div></section>
+    <section class="card"><div class="cardhead"><h2>RECENT SEARCHES</h2><button class="smallbtn" id="clearHistory">Clear</button></div><div class="history" id="history"></div></section>
+  </div>
+</main>
+<div class="footer">CART3R BROWSER · A start page, not a separate browser engine</div>
+</div><div class="toast" id="toast" role="status"></div>
+<script>
+const $=s=>document.querySelector(s);
+const read=(key,fallback)=>{try{const v=JSON.parse(localStorage.getItem(key));return v??fallback}catch{return fallback}};
+const write=(key,value)=>{try{localStorage.setItem(key,JSON.stringify(value))}catch{notify("Storage is unavailable in this browser.")}};
+let tabs=[{id:1,name:"New Tab",value:""}],active=1,nextId=2;
+let bookmarks=read("cart3r_bookmarks",[]),historyItems=read("cart3r_history",[]);
+$("#engine").value=read("cart3r_engine","duck");
+function notify(message){const t=$("#toast");t.textContent=message;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1900)}
+function renderTabs(){const root=$("#tabs");root.querySelectorAll(".tab").forEach(n=>n.remove());tabs.forEach(tab=>{const b=document.createElement("button");b.className="tab"+(tab.id===active?" active":"");const label=document.createElement("span");label.textContent=tab.name;const close=document.createElement("span");close.className="close";close.textContent="×";close.setAttribute("role","button");close.setAttribute("aria-label","Close "+tab.name);close.onclick=e=>{e.stopPropagation();closeTab(tab.id)};b.append(label,close);b.onclick=()=>switchTab(tab.id);root.insertBefore(b,$("#addTab"))});$("#query").value=tabs.find(t=>t.id===active)?.value||""}
+function switchTab(id){active=id;renderTabs()}
+function addTab(){const id=nextId++;tabs.push({id,name:"New Tab",value:""});switchTab(id)}
+function closeTab(id){if(tabs.length===1){tabs[0]={id:tabs[0].id,name:"New Tab",value:""};switchTab(tabs[0].id);return}const i=tabs.findIndex(t=>t.id===id);tabs=tabs.filter(t=>t.id!==id);if(active===id)active=tabs[Math.max(0,i-1)].id;renderTabs()}
+function renderBookmarks(){const root=$("#bookmarks");root.replaceChildren();if(!bookmarks.length){root.innerHTML='<p class="hint">Your saved links will appear here.</p>';return}bookmarks.forEach((item,index)=>{const box=document.createElement("div");box.className="bookmark";const link=document.createElement("a");link.href=item.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=item.title;const remove=document.createElement("button");remove.textContent="×";remove.setAttribute("aria-label","Remove bookmark");remove.onclick=()=>{bookmarks.splice(index,1);write("cart3r_bookmarks",bookmarks);renderBookmarks()};box.append(link,remove);root.append(box)})}
+function renderHistory(){const root=$("#history");root.replaceChildren();if(!historyItems.length){root.innerHTML='<p class="hint">Your recent searches will appear here.</p>';return}historyItems.slice(0,8).forEach(item=>{const row=document.createElement("div");row.className="historyrow";const q=document.createElement("span");q.textContent=item.query;const time=document.createElement("small");time.textContent=item.time;row.append(q,time);root.append(row)})}
+function makeUrl(raw){const value=raw.trim();if(/^https?:\/\//i.test(value))return value;if(/^[\w-]+(\.[\w-]+)+([/:?#].*)?$/i.test(value)&&!value.includes(" "))return "https://"+value;const engine=$("#engine").value;const base={duck:"https://duckduckgo.com/?q=",bing:"https://www.bing.com/search?q=",google:"https://www.google.com/search?q="}[engine];return base+encodeURIComponent(value)}
+function navigate(raw){const value=raw.trim();if(!value)return;const url=makeUrl(value);const tab=tabs.find(t=>t.id===active);tab.value=value;tab.name=value.length>17?value.slice(0,17)+"…":value;historyItems.unshift({query:value,time:new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})});historyItems=historyItems.slice(0,50);write("cart3r_history",historyItems);write("cart3r_engine",$("#engine").value);renderTabs();renderHistory();const opened=window.open(url,"_blank","noopener,noreferrer");if(!opened)notify("Pop-up blocked: allow pop-ups for this page to open links.")}
+$("#searchForm").addEventListener("submit",e=>{e.preventDefault();navigate($("#query").value)});
+$("#addTab").onclick=addTab;
+$("#bookmarkCurrent").onclick=()=>{const tab=tabs.find(t=>t.id===active);if(!tab.value){notify("Search for a website first.");return}const url=makeUrl(tab.value);if(!bookmarks.some(b=>b.url===url)){bookmarks.unshift({title:tab.name,url});write("cart3r_bookmarks",bookmarks);renderBookmarks();notify("Bookmark saved.")}else notify("Already bookmarked.")};
+$("#back").onclick=()=>{if(history.length>1)history.back();else notify("Use the Back button in the opened website tab.")};
+$("#forward").onclick=()=>notify("Use Forward in the opened website tab.");
+$("#refresh").onclick=()=>location.reload();
+$("#clearHistory").onclick=()=>{historyItems=[];write("cart3r_history",historyItems);renderHistory();notify("Search history cleared.")};
+$("#clearBookmarks").onclick=()=>{bookmarks=[];write("cart3r_bookmarks",bookmarks);renderBookmarks();notify("Bookmarks cleared.")};
+$("#engine").onchange=()=>write("cart3r_engine",$("#engine").value);
+document.querySelectorAll("[data-search]").forEach(button=>button.onclick=()=>navigate(button.dataset.search));
+renderTabs();renderBookmarks();renderHistory();
+</script>
+</body></html>
